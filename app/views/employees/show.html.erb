@@ -3,7 +3,12 @@
 <table>
   <tr>
     <td>First Name: <%= @employee.full_name %> </td>
-    <td> <%= link_to "Delete", @employee, :method => :delete, :confirm => "You sure?" %> </td>
+    <td> 
+      <%= link_to "Delete", @employee, :method => :delete, :confirm => "You sure?" %> 
+    </td>
+    <td>
+      <%= link_to "Edit", edit_employee_url(@employee) %>
+    </td>
   </tr>
 </table>
 
