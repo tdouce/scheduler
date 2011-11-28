@@ -1,8 +1,7 @@
 Scheduler::Application.routes.draw do
+  resources :employees
 
-
-
-  get "employees/index"
+  root :to => 'pages#dashboard'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
