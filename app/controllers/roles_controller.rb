@@ -4,10 +4,12 @@ class RolesController < ApplicationController
     @roles = Role.all
   end
 
+  # for html form
   def new
     @role = Role.new(params[:role])
   end
 
+  # for the actually POST in the database
   def create
     @role = Role.new(params[:role])
 
@@ -20,6 +22,7 @@ class RolesController < ApplicationController
     end
   end
 
+  # the actual PUT to the database
   def update
     @role = Role.find(params[:id])
     if @role.update_attributes(params[:role])
