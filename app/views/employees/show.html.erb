@@ -1,15 +1,8 @@
 
-
-<table>
-  <tr>
-    <td>First Name: <%= @employee.full_name %> </td>
-    <td> 
-      <%= link_to "Delete", @employee, :method => :delete, 
-          :confirm => "Are you sure you want to delete #{ @employee.full_name }?" %> 
-    </td>
-    <td>
-      <%= link_to "Edit", edit_employee_url(@employee) %>
-    </td>
-  </tr>
-</table>
+<p>First Name: <%= @employee.full_name %> </p>
+<p>Role:  Role here </p>
+<p><%= link_to "Delete", @employee, :method => :delete, 
+      :confirm => "Are you sure you want to delete #{ @employee.full_name }?" %> |
+  <%= link_to "Edit", edit_employee_url(@employee) %>
+</p>
 
