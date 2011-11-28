@@ -1,15 +1,7 @@
 
 <%= form_for @employee do |f| %>
-
-  <% if @employee.errors.any? %>
-    <div class="errorExplanation">
-      <ul>
-        <% @employee.errors.full_messages.each do |msg| %>
-          <li> <%= msg %> </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
+  <%= render 'errormessages' %>
 
   <div>
     <%= f.label "First Name: " %>
