@@ -22,7 +22,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(params[:employee])
 
     if @employee.save
-      flash[:success] = "Employee #{ @employee.full_name} was created!"
+      flash[:success] = "Employee #{@employee.full_name} was created!"
 
       # Redirect to employee index
       redirect_to employees_url

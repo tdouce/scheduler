@@ -1,5 +1,6 @@
 Scheduler::Application.routes.draw do
   resources :employees
+  resources :roles
 
   root :to => 'pages#dashboard'
 
