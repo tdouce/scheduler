@@ -5,8 +5,7 @@ class Role < ActiveRecord::Base
   validates :name, :presence => true,
             :uniqueness => true
                          
-      
+  has_many  :employments
+  has_many  :employees, :through => :employments
 
-  #has_many  :employments
-  #has_many  :employees, :through => :employments
 end
