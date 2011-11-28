@@ -1,2 +1,5 @@
 <h1>Pages#dashboard</h1>
-<p>Find me in app/views/pages/dashboard.html.erb</p>
+
+<p> Total Employees: <%= pluralize( @employees.count, 'employee' ) %> </p>
+<p> <%= link_to "Create New Employee", new_employee_url %>   </p>
+<p> <%= link_to "All Employees", employees_url %>   </p>
