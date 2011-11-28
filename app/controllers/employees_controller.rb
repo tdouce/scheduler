@@ -1,7 +1,9 @@
 class EmployeesController < ApplicationController
 
   def index
-    @employees = Employee.all
+    # To order the employees by last_name you can remove '.all'
+    # and add '.order()'.  The '.all' is implied
+    @employees = Employee.order("last_name asc")
   end
 
   # Individual employees
