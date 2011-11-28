@@ -15,7 +15,7 @@ class RolesController < ApplicationController
       flash[:success] = "Role successfully created!"
       redirect_to roles_url
     else
-      flash[:failure] = "Rose NOT created."
+      flash[:failure] = "Role NOT created."
       render 'new'
     end
   end
