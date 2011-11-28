@@ -1,5 +1,23 @@
-<%= f.label "First Name: " %>
-<%= f.text_field :first_name %><br />
-<%= f.label "Last Name: " %>
-<%= f.text_field :last_name %><br />
+
+<%= form_for @employee do |f| %>
+
+  <% if @employee.errors.any? %>
+    <div class="errorExplanation">
+      <ul>
+        <% @employee.errors.full_messages.each do |msg| %>
+          <li> <%= msg %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label "First Name: " %>
+    <%= f.text_field :first_name %><br />
+    <%= f.label "Last Name: " %>
+    <%= f.text_field :last_name %><br />
+    <%= f.submit submit_text %>
+  </div>
+<% end %>
+
 
