@@ -34,13 +34,19 @@ class EmployeesController < ApplicationController
   # The POST http verb for the actual creation of a new employee
   def create 
     @employee = Employee.new(params[:employee])
-    @employee.save
-    #if @employee.save
-    #  flash[:success] = "Employee created!"
-    #  redirect_to user_path(@employee)
-    #else
-    #  render 'new'
-    #end
+
+    if @employee.save
+
+      flash[:success] = "Employee created!"
+      # Redirect to employee index
+      redirect_to employees_url
+    else
+      flash[:failure] = "Employee NOT created!"
+      render 'new'
+
+      # Why not something like this instead of " render 'new' "?
+      #render new_employee_url 
+    end
 
   end
 
