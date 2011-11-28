@@ -9,7 +9,7 @@ class RolesController < ApplicationController
     @role = Role.new(params[:role])
   end
 
-  # for the actually POST in the database
+  #  POST => database
   def create
     @role = Role.new(params[:role])
 
@@ -22,7 +22,7 @@ class RolesController < ApplicationController
     end
   end
 
-  # the actual PUT to the database
+  # PUT => database
   def update
     @role = Role.find(params[:id])
     if @role.update_attributes(params[:role])
@@ -43,6 +43,7 @@ class RolesController < ApplicationController
     @role = Role.find(params[:id])
   end
 
+  # DELETE => database
   def destroy
     role = Role.find(params[:id]).destroy 
     redirect_to roles_url

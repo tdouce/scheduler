@@ -15,7 +15,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(params[:employee])
   end
 
-  # The POST http verb for the actual creation of a new employee
+  # POST => database 
   def create 
     # Saving the ':employee' and all the form values, which is in a nested
     # dictionary
@@ -35,7 +35,7 @@ class EmployeesController < ApplicationController
     end
   end
 
-  # Used in the PUT http request to actually update the employee in the datbase
+  # PUT => database
   def update
     # Find the same employee that was used in the 'edit' action. 
     @employee = Employee.find(params[:id])
@@ -50,16 +50,16 @@ class EmployeesController < ApplicationController
     end
   end
 
-  # Used in the html form. Find the employee and it's attributes
+  # Used in the html form.
   def edit
     @employee = Employee.find(params[:id])
   end
 
+  # DELETE => database
   def destroy
     employee = Employee.find(params[:id]).destroy
     flash[:success] = "Employee #{employee.full_name} was destroyed."
 
-    # Redirect to index page
     redirect_to employees_path
   end
 
