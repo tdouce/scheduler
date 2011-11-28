@@ -1,7 +1,7 @@
 
 <%= form_for @employee do |f| %>
   
-  <%= render 'errormessages' %>
+  <%= render 'shared/errormessages', :object => f.object %>
 
   <div>
     <%= f.label "First Name: " %>

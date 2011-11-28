@@ -1,5 +1,8 @@
 
 <%= form_for @role do |f| %>
+  
+  <%= render 'shared/errormessages', :object => f.object %>
+
   <%= f.label "Name" %>
   <%= f.text_field :name %><br />
   <%= f.submit submit_text %>
