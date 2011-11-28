@@ -9,6 +9,11 @@
       </td>
       <td>
         <%= link_to "delete", employee, :method => :delete, 
-          :confirm => "Are you sure you want to delete #{employee.full_name}?", :title => "Delete #{employee.full_name}"%>    </tr>
+          :confirm => "Are you sure you want to delete #{employee.full_name}?", :title => "Delete #{employee.full_name}"%>    
+      </td>
+      <td>
+        <%= link_to "edit", edit_employee_path(employee) %>    
+      </td>
+    </tr>
   <% end %>
 </table>
