@@ -1,3 +1,9 @@
 
 
-<p>First Name: <%= @employee.full_name %> </p>
+<table>
+  <tr>
+    <td>First Name: <%= @employee.full_name %> </td>
+    <td> <%= link_to "Delete", @employee, :method => :delete %> </td>
+  </tr>
+</table>
+

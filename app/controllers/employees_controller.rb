@@ -7,16 +7,8 @@ class EmployeesController < ApplicationController
   # The html form for creating a new employee
   def new 
 
+    # ':employee' get the nested dictionary (i.e. all the form values)
     @employee = Employee.new(params[:employee])
-    #@employee = Employee.new
-
-    #if @employee.save
-    #  flash[:success] = "Employee created!"
-    #  redirect_to user_path(@employee)
-    #else
-    #  render 'new'
-    #end
-
 
   end
 
@@ -25,10 +17,12 @@ class EmployeesController < ApplicationController
   end
 
   def destroy
+    Employee.find(params[:id]).destroy
     flash[:success] = "Employee was destroyed."
 
     # Redirect to index page
     redirect_to employees_path
+
   end
 
   # The POST http verb for the actual creation of a new employee
@@ -42,7 +36,7 @@ class EmployeesController < ApplicationController
       redirect_to employees_url
     else
       flash[:failure] = "Employee NOT created!"
-      render 'new'
+      render :action => 'new'
 
       # Why not something like this instead of " render 'new' "?
       #render new_employee_url 
@@ -50,8 +44,7 @@ class EmployeesController < ApplicationController
 
   end
 
-  
-
+  # Individual employees
   def show
     @employee = Employee.find(params[:id])
   end
