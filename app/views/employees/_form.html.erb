@@ -8,8 +8,12 @@
     <%= f.text_field :first_name %><br />
     <%= f.label "Last Name: " %>
     <%= f.text_field :last_name %><br />
+
+    <%= collection_select("post", "role_id", Role.all, :id, :name ) %><br />
+
     <%= f.submit submit_text %>
   </div>
+
 
   <p>  
     <%= link_to "Cancel", employees_url  %> 
