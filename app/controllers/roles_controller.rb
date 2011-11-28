@@ -1,7 +1,7 @@
 class RolesController < ApplicationController
 
   def index
-    @roles = Role.all
+    @roles = Role.order('name asc')
   end
 
   # for html form
