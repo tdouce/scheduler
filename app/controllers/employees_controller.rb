@@ -14,7 +14,8 @@ class EmployeesController < ApplicationController
   # The html form for creating a new employee
   def new 
     # ':employee' get the nested dictionary (i.e. all the form values)
-    @employee = Employee.new(params[:employee])
+    #@employee = Employee.new(params[:employee])
+    @employee = Employee.new
   end
 
   # POST => database 
@@ -39,8 +40,17 @@ class EmployeesController < ApplicationController
 
   # PUT => database
   def update
+    
+    # If employee was submitted with 'no' roles (i.e. no checkboxes where
+    # checked) then set employee.role_ids to empty array
+    params[:employee][:role_ids] ||= []
+
     # Find the same employee that was used in the 'edit' action. 
     @employee = Employee.find(params[:id])
+
+    puts '*' * 80
+    puts @employee.full_name
+    puts '*' * 80
 
     # If the saving of the employee is successfull
     if @employee.update_attributes(params[:employee])

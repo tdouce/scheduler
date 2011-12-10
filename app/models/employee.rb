@@ -1,6 +1,7 @@
 class Employee < ActiveRecord::Base
 
-  attr_accessible :first_name, :last_name
+  # Have to make these attributes accessible to insert into join table (employments)
+  attr_accessible :first_name, :last_name, :role_ids
 
   validates :first_name,  :presence => true
   validates :last_name,   :presence => true
@@ -10,7 +11,8 @@ class Employee < ActiveRecord::Base
 
   # Creates web-friendly name
   def full_name
-    self.first_name + ' ' + self.last_name
+    #self.first_name + ' ' + self.last_name
+    [ self.first_name, self.last_name ].join(" ")
   end
 
 end
