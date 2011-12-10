@@ -7,7 +7,8 @@
   <% end %>
 </ul>
 
-<p><%= link_to "Delete", @employee, :method => :delete, 
+<p>
+  <%= link_to "Delete", @employee, :method => :delete, 
       :confirm => "Are you sure you want to delete #{ @employee.full_name }?" %> |
   <%= link_to "Edit", edit_employee_url(@employee) %> |
   <%= link_to "All Employees", employees_path %>

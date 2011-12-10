@@ -14,14 +14,12 @@ class EmployeesController < ApplicationController
   # The html form for creating a new employee
   def new 
     # ':employee' get the nested dictionary (i.e. all the form values)
-    #@employee = Employee.new(params[:employee])
     @employee = Employee.new
   end
 
   # POST => database 
   def create 
-    # Saving the ':employee' and all the form values, which is in a nested
-    # dictionary
+    # Saving the ':employee' and all the form values, which is in a nested dictionary
     @employee = Employee.new(params[:employee])
 
     if @employee.save
@@ -48,10 +46,6 @@ class EmployeesController < ApplicationController
     # Find the same employee that was used in the 'edit' action. 
     @employee = Employee.find(params[:id])
 
-    puts '*' * 80
-    puts @employee.full_name
-    puts '*' * 80
-
     # If the saving of the employee is successfull
     if @employee.update_attributes(params[:employee])
       flash[:success] = "Employee #{@employee.full_name} was updated"
@@ -71,7 +65,6 @@ class EmployeesController < ApplicationController
   def destroy
     employee = Employee.find(params[:id]).destroy
     flash[:success] = "Employee #{employee.full_name} was destroyed."
-
     redirect_to employees_path
   end
 
