@@ -20,6 +20,8 @@ gem 'jquery-rails'
 gem 'therubyracer'
 gem 'formtastic'
 
+gem 'devise', '1.5.2'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
