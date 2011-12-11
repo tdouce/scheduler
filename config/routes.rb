@@ -1,4 +1,6 @@
 Scheduler::Application.routes.draw do
+  devise_for :users
+
   resources :employees
   resources :roles
 
