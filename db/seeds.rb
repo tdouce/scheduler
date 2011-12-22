@@ -21,5 +21,12 @@
                                 { name: 'Cashier' }
                                ])
 
+  roles = Shift.create([
+                                { name: 'Batman morning' }, 
+                                { name: 'Batman afternoon' }, 
+                                { name: 'Country Cousins morning' }, 
+                                { name: 'Country Cousins afternoon' }
+                               ])
+
 
 
