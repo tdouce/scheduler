@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+  # redirect to root unless user is signed_in
+  before_filter :show_page?
 
   def index
     # To order the employees by last_name you can remove '.all'

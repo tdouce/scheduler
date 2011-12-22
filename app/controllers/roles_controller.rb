@@ -1,5 +1,7 @@
 class RolesController < ApplicationController
 
+  before_filter :show_page?
+
   def index
     @roles = Role.order('name asc')
   end
