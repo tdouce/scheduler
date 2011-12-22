@@ -2,10 +2,15 @@ class EmployeesController < ApplicationController
   # redirect to root unless user is signed_in
   before_filter :show_page?
 
+  respond_to :html, :xml, :json
+
   def index
     # To order the employees by last_name you can remove '.all'
     # and add '.order()'.  The '.all' is implied
     @employees = Employee.order("last_name asc")
+    
+    # rendering html, xml, json
+    respond_with(@employees)
   end
 
   # Individual employees
