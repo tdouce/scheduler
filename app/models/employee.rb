@@ -8,6 +8,7 @@ class Employee < ActiveRecord::Base
 
   has_many  :employments
   has_many  :roles, :through => :employments
+  has_many  :shifts
 
   # Creates web-friendly name
   def full_name
