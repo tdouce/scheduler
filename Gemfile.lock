@@ -125,7 +125,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   devise (= 1.5.2)
   formtastic
-  jquery-rails
+  jquery-rails (>= 1.0.12)
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)
   sqlite3

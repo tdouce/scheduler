@@ -3,6 +3,7 @@ Scheduler::Application.routes.draw do
 
   resources :employees
   resources :roles
+  resources :shifts
 
   root :to => 'pages#dashboard'
 

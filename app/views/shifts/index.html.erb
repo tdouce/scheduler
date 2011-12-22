@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Is a template</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <% @shifts.each do |shift| %>
+    <tr>
+      <td><%= shift.name %><td>
+      <td><%= shift.is_template ? 'yes' : '' %> </td>
+      <td><%= link_to 'delete', shift, :method => :delete,
+              :confirm => "Are you sure you want to detelte #{ shift.name }?",
+              :title => "Delete #{ shift.name }" %>
+      </td>
+      <td><%= link_to "edit", edit_shift_path(shift) %> </td>
+    </tr>
+  <% end %>
+</table>

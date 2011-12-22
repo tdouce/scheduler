@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111222141059) do
+ActiveRecord::Schema.define(:version => 20111222152045) do
 
   create_table "employees", :force => true do |t|
     t.string   "first_name"
@@ -36,11 +36,15 @@ ActiveRecord::Schema.define(:version => 20111222141059) do
   create_table "shifts", :force => true do |t|
     t.integer  "employee_id"
     t.integer  "role_id"
-    t.datetime "dt_start"
-    t.datetime "dt_end_"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.time     "time_start"
+    t.time     "time_end"
     t.string   "template_name"
+    t.boolean  "is_template"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "users", :force => true do |t|

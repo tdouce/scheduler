@@ -1,0 +1,20 @@
+<%= form_for @shift do |f| %>
+
+  <%= f.label "Is this a template?" %>
+  <%= check_box_tag 'shift[is_template]', true %><br />
+  
+  <div id="is_template">
+    <%= f.label "Template name" %>
+    <%= f.text_field :name %> <br />
+  </div>
+
+  <%= f.label 'Start' %>
+  <%= f.date_select :date_start, :start_year => Time.now.year, :end_year => Time.now.year + 1 %>
+  <%= f.time_select :time_start, {:ampm => true, :minute_step => 15} %> <br />
+
+  <%= f.label 'End' %>
+  <%= f.date_select :date_end, :start_year => Time.now.year, :end_year => Time.now.year + 1 %>
+  <%= f.time_select :time_end, {:ampm => true, :minute_step => 15} %> <br />
+
+  <%= f.submit submit_text %>
+<% end %>

@@ -3,13 +3,19 @@
 one:
   employee_id: 1
   role_id: 1
-  dt_start: 2011-12-22 09:10:59
-  dt_end_: 2011-12-22 09:10:59
+  date_start: 2011-12-22
+  date_end: 2011-12-22
+  time_start: 2011-12-22 10:17:08
+  time_end: 2011-12-22 10:17:08
   template_name: MyString
+  is_template: false
 
 two:
   employee_id: 1
   role_id: 1
-  dt_start: 2011-12-22 09:10:59
-  dt_end_: 2011-12-22 09:10:59
+  date_start: 2011-12-22
+  date_end: 2011-12-22
+  time_start: 2011-12-22 10:17:08
+  time_end: 2011-12-22 10:17:08
   template_name: MyString
+  is_template: false
