@@ -10,7 +10,7 @@ class Employee < ActiveRecord::Base
   has_many  :roles, :through => :employments
   has_many  :shifts
 
-  # Creates web-friendly name
+  # web-friendly name
   def full_name
     [ self.first_name, self.last_name ].join(" ")
   end
