@@ -3,10 +3,21 @@
     <th>
       Template Day Name
     </th>
+    <td>
+    </td>
+    <td>
+    </td>
   </tr>
 <% @days.each do |day| %>
   <tr>
     <td> <%= day.name %> </td>
+    <td>
+        <%= link_to "delete", day, :method => :delete, 
+          :confirm => "Are you sure you want to delete #{day.name}?", :title => "Delete #{day.name}"%>    
+    </td>
+    <td>
+        <%= link_to "edit", edit_day_path(day) %>    
+    </td>
   </tr>
 <% end %>
 </table>

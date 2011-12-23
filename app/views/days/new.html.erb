@@ -1,7 +1,2 @@
-<%= form_for @day do |f| %>
 
-  <%= f.label "Day template name" %>
-  <%= f.text_field :name %> <br />
-  <%= f.submit "Create" %>
-
-<% end %>
+<%= render 'form', :submit_text => 'Create' %>

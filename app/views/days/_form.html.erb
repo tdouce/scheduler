@@ -1,0 +1,26 @@
+
+<%= form_for @day do |f| %>
+  
+  <%= render 'shared/errormessages', :object => f.object %>
+
+  <div>
+    <%= f.label "Name: " %>
+    <%= f.text_field :name %><br />
+
+    <% Shift.all.each do |shift| %>
+      <div>
+        <%= check_box_tag 'day[shift_ids][]', shift.id, @day.shifts.include?(shift) %>
+        <%= shift.name %>
+      </div>
+    <% end %>
+
+    <%= f.submit submit_text %>
+  </div>
+
+  <p>  
+    <%= link_to "Cancel", days_url  %> 
+  </p>
+
+<% end %>
+
+

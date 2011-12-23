@@ -17,7 +17,7 @@ class DaysController < ApplicationController
 
     if @day.save
       flash[:success] = "Day successfully created!"
-      redirect_to shifts_url
+      redirect_to days_url
     else
       flash[:failure] = "Day NOT created!"
       render :action => 'new'
