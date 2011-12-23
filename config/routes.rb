@@ -1,4 +1,8 @@
 Scheduler::Application.routes.draw do
+  get "days/new"
+
+  get "days/update"
+
   devise_for :users
 
   resources :employees
