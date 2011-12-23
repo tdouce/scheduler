@@ -3,7 +3,8 @@ class Shift < ActiveRecord::Base
   attr_accessible :name, :time_start, :time_end
   #attr_accessor :day_of_week_template_name
 
-  has_many :days
+  has_many  :assignments
+  has_many  :days, :through => :assignments
 
   validates :name, :presence => true,
             :uniqueness => true

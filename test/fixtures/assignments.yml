@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  day_id: 1
+  shift_id: 1
 
 two:
-  name: MyString
+  day_id: 1
+  shift_id: 1

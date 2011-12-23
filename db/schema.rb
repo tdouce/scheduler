@@ -11,10 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223135913) do
+ActiveRecord::Schema.define(:version => 20111223144807) do
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "day_id"
+    t.integer  "shift_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "days", :force => true do |t|
-    t.integer  "shift_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
