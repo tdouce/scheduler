@@ -1,9 +1,9 @@
-
+<h3> Make Your Schedule </h3>
 <%= form_for @schedule do |f| %>
-  <%= f.label "Date" %>
+  <%= f.label "Schedule for:" %>
   <%= f.date_select :date, :start_year => Time.now.year %> <br />
 
-  <%= f.label "Template day" %>
+  <%= f.label "Template you want to use:" %>
   <%= f.collection_select :day_id, @day_templates, :id, :name %> <br />
 
   <%= f.submit "Create" %>

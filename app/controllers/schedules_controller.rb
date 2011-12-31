@@ -1,5 +1,4 @@
 class SchedulesController < ApplicationController
-
   # used to generate a html form for new shift
   def new
     @schedule = Schedule.new
