@@ -1,4 +1,14 @@
 Scheduler::Application.routes.draw do
+  get "schedules/Users"
+
+  get "schedules/new"
+
+  get "schedules/update"
+
+  get "schedules/edit"
+
+  get "schedules/destroy"
+
   devise_for :users
 
   resources :employees
