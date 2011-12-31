@@ -3,5 +3,6 @@ class Day < ActiveRecord::Base
 
   has_many  :assignments
   has_many  :shifts, :through => :assignments
+  has_many  :schedules
 
 end
