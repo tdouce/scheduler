@@ -1,8 +1,7 @@
 class Schedule < ActiveRecord::Base
   belongs_to :day
 
-  #def template_day
-  #  self.
-  #end
+  validates :date, :presence => true,
+            :uniqueness => true
 
 end

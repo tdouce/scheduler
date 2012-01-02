@@ -1,5 +1,9 @@
 <h3> Make Your Schedule </h3>
+
 <%= form_for @schedule do |f| %>
+
+  <%= render 'shared/errormessages', :object => f.object %>
+
   <%= f.label "Schedule for:" %>
   <%= f.date_select :date, :start_year => Time.now.year %> <br />
 
@@ -13,3 +17,4 @@
 <h3> Results of Ajax request here to generate the appropriate number and type
       of shifts and have shifts filled randomly with employees
 </h3>
+

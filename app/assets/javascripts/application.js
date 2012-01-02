@@ -9,6 +9,9 @@
 //= require_tree .
 
 $(function(){  
-  alert('testing here');
-  //$('#container').hide();
+
+  //$('#schedule_day_id').change(function(){
+  //  alert( 'test' ); 
+  //});
+
 });
