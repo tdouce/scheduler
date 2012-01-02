@@ -17,7 +17,9 @@ class SchedulesController < ApplicationController
     end
   end
 
-
+  def index
+    @schedules = Schedule.all
+  end
 
   def update
   end
@@ -26,6 +28,9 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
+    schedule = Schedule.find(params[:id]).destroy
+    flash[:success] = "Schedule #{ schedule.date } was destroyed."
+    redirect_to schedules_url
   end
 
 end
