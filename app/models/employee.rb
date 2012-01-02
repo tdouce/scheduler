@@ -6,8 +6,12 @@ class Employee < ActiveRecord::Base
   validates :first_name,  :presence => true
   validates :last_name,   :presence => true
 
+  has_many  :workdays
+  has_many  :shifts, :through => :workdays
+
   has_many  :employments
   has_many  :roles, :through => :employments
+
   has_many  :shifts
 
   # web-friendly name

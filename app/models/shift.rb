@@ -3,6 +3,9 @@ class Shift < ActiveRecord::Base
   attr_accessible :name, :time_start, :time_end
   #attr_accessor :day_of_week_template_name
 
+  has_many  :workdays
+  has_many  :employees, :through => :workdays
+
   has_many  :assignments
   has_many  :days, :through => :assignments
 
