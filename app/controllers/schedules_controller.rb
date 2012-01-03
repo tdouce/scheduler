@@ -1,4 +1,8 @@
 class SchedulesController < ApplicationController
+
+  # redirect to root unless user is signed_in
+  before_filter :show_page?
+
   # used to generate a html form for new shift
   def new
     @schedule = Schedule.new
