@@ -1,6 +1,7 @@
 class Shift < ActiveRecord::Base
 
-  attr_accessible :name, :time_start, :time_end
+  # Should have to have :employee_ids to assign employees to a shift
+  attr_accessible :name, :time_start, :time_end, :employee_ids
   #attr_accessor :day_of_week_template_name
 
   has_many  :workdays

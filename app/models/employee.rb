@@ -1,8 +1,10 @@
 class Employee < ActiveRecord::Base
 
   # Have to make these attributes accessible to insert into join table (employments)
-  attr_accessible :first_name, :last_name, :role_ids
-
+  # Have to have :role_ids to assign roles to an employee 
+  attr_accessible :first_name, :last_name, :role_ids, :shift_ids
+  #:role_ids, :employee_id,:shift_ids
+  
   validates :first_name,  :presence => true
   validates :last_name,   :presence => true
 
@@ -11,8 +13,6 @@ class Employee < ActiveRecord::Base
 
   has_many  :employments
   has_many  :roles, :through => :employments
-
-  has_many  :shifts
 
   # web-friendly name
   def full_name
