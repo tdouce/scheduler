@@ -1,6 +1,6 @@
 class Schedule < ActiveRecord::Base
 
-  attr_accessible :schedule_id
+  attr_accessible :schedule_id, :date
 
   belongs_to :day
   has_many   :workdays
