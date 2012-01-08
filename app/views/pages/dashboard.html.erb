@@ -6,10 +6,15 @@
   <table>
     <tr>
       <td>Scheduled Days</td>
+      <td></td>
+      <td></td>
     </tr>
     <% @scheduled_days.each do |day| %>
     <tr>
       <td><%= link_to day.date, schedule_url(day) %></td>
+      <td><%= link_to 'Edit', edit_schedule_url(day) %></td>
+      <td><%= link_to 'Delete', day, :method => :delete,
+                  :confirm => "Are you sure you want to delete #{ day.date }?"%></td>
     </tr>
   <% end %>
   </table>
