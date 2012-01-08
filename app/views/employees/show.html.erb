@@ -21,7 +21,7 @@
 <p>Days worked:</p>
 
 <ul>
-  <% @days_worked.each do |workday| %>
+  <% @employee.days_worked.each do |workday| %>
   <li> <%= workday.schedule.date %> </li>
   <% end %>
 </ul>

@@ -19,4 +19,8 @@ class Employee < ActiveRecord::Base
     [ self.first_name, self.last_name ].join(" ")
   end
 
+  def days_worked
+    self.workdays
+  end
+
 end
