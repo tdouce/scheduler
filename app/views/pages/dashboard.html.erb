@@ -3,5 +3,15 @@
   <h1>Dashboard</h1>
   <p> Total Employees: <%= pluralize( @employees.count, 'employee' ) %> </p>
   <p> Total Roles: <%= pluralize( @roles.count, 'role') %> </p>
+  <table>
+    <tr>
+      <td>Scheduled Days</td>
+    </tr>
+    <% @scheduled_days.each do |day| %>
+    <tr>
+      <td><%= link_to day.date, schedule_url(day) %></td>
+    </tr>
+  <% end %>
+  </table>
 <% end %>
 

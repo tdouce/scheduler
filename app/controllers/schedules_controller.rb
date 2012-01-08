@@ -28,6 +28,10 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.all
   end
 
+  def show
+    @scheduled_day = Schedule.find(params[:id])
+  end
+
   def update
   end
 
