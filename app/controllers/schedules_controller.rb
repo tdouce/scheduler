@@ -7,6 +7,9 @@ class SchedulesController < ApplicationController
   def new
     @schedule = Schedule.new
     @day_templates = Day.order("name asc")
+
+    # TAke this out. Just to practive generating code
+    @shifts = Schedule.last.day.shifts
   end
 
   def create

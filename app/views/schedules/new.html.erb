@@ -9,7 +9,12 @@
 
   <%= f.label "Template you want to use:" %>
   <%= f.collection_select :day_id, @day_templates, :id, :name %> <br />
-  debugger
+  <br />
+  <% @shifts.each do |shift| %>
+    <%= shift.name %> 
+    <%= select("post","employee_id", Employee.all.map {|employee| employee.full_name }, :selected => Employee.all.sample.full_name ) %>
+    <br />
+  <% end %>
 
   <%= f.submit "Create" %>
 
