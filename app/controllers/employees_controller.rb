@@ -16,6 +16,7 @@ class EmployeesController < ApplicationController
   # Individual employees
   def show
     @employee = Employee.find(params[:id])
+    @days_worked = @employee.workdays 
   end
 
   # The html form for creating a new employee

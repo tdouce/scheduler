@@ -1,11 +1,5 @@
 
 <p>First Name: <%= @employee.full_name %> </p>
-<p>Roles: </p>
-<ul>  
-  <% @employee.roles.each do |role| %> 
-    <li> <%=  role.name %> </li>
-  <% end %>
-</ul>
 
 <p>
   <%= link_to "Delete", @employee, :method => :delete, 
@@ -13,4 +7,22 @@
   <%= link_to "Edit", edit_employee_url(@employee) %> |
   <%= link_to "All Employees", employees_path %>
 </p>
+
+<br />
+<p>Roles: </p>
+<ul>  
+  <% @employee.roles.each do |role| %> 
+    <li> <%=  role.name %> </li>
+  <% end %>
+</ul>
+
+<br />
+
+<p>Days worked:</p>
+
+<ul>
+  <% @days_worked.each do |workday| %>
+  <li> <%= workday.schedule.date %> </li>
+  <% end %>
+</ul>
 

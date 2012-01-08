@@ -8,4 +8,9 @@ class Schedule < ActiveRecord::Base
   validates :date, :presence => true,
             :uniqueness => true
 
+  # The number of employees who worked this day
+  def number_employees_today
+    self.workdays.map {|workday| workday.employee_id }.uniq.length
+  end
+
 end
