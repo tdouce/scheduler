@@ -9,5 +9,17 @@
   <%= f.label 'End' %>
   <%= f.time_select :time_end, {:ampm => true, :minute_step => 15} %> <br />
 
+  <%= f.label "Roles that can fill shift"%> <br />
+  
+  <% Role.all.each do |role| %>
+    <%= check_box_tag 'shift[role_ids][]', role.id, @shift.roles.include?(role) %>
+    <%= role.name %>
+  <% end %>
+
+  <br />
+
   <%= f.submit submit_text %>
+
 <% end %>
+
+<p> <%= link_to "Cancel", shifts_url %> </p>
