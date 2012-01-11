@@ -1,5 +1,7 @@
 <%= form_for @shift do |f| %>
 
+  <%= render 'shared/errormessages', :object => f.object %>
+
   <%= f.label "Shift name" %>
   <%= f.text_field :name %> <br />
 
