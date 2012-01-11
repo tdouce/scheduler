@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120107124110) do
+ActiveRecord::Schema.define(:version => 20120111161730) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "day_id"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20120107124110) do
   create_table "schedules", :force => true do |t|
     t.date     "date"
     t.integer  "day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shiftroles", :force => true do |t|
+    t.integer  "shift_id"
+    t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

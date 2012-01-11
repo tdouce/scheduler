@@ -1,11 +1,13 @@
 <table>
   <tr>
     <th>Shift Name</th>
+    <th>Role</th>
     <td></td>
   </tr>
   <% @shifts.each do |shift| %>
     <tr>
       <td><%= shift.name %><td>
+          <td><%= shift.roles_assigned_to_shift "No roles assigned" %><td>
       <td><%= link_to 'delete', shift, :method => :delete,
               :confirm => "Are you sure you want to detelte #{ shift.name }?",
               :title => "Delete #{ shift.name }" %>

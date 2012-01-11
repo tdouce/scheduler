@@ -1,7 +1,7 @@
 class Shift < ActiveRecord::Base
 
   # Should have to have :employee_ids to assign employees to a shift
-  attr_accessible :name, :time_start, :time_end, :employee_ids
+  attr_accessible :name, :time_start, :time_end, :employee_ids, :role_ids
   #attr_accessor :day_of_week_template_name
 
   has_many  :workdays
@@ -10,15 +10,16 @@ class Shift < ActiveRecord::Base
   has_many  :assignments
   has_many  :days, :through => :assignments
 
+  has_many  :shiftroles
+  has_many  :roles, :through => :shiftroles
+
   validates :name, :presence => true,
             :uniqueness => true
   validates :time_start, :presence => true
   validates :time_end, :presence => true
 
-  #DAY_OF_WEEK = [ 'Monday', 'Slow_Monday' ]
-
-  #def add_day_of_week( new_name )
-  #  DAY_OF_WEEK << new_name
-  #end
+  def roles_assigned_to_shift( for_print )
+    self.roles.empty? ? for_print : self.roles.map { |role| role.name }.join(", ") 
+  end
 
 end
