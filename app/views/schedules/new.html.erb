@@ -12,7 +12,7 @@
   <br />
   <% @shifts.each do |shift| %>
     <%= shift.name %> 
-    <%= select("post","employee_id", Employee.elgible_for_shift(shift.role_ids), :selected => Employee.elgible_for_shift(shift.roles_per_shift).sample ) %>
+    <%= select("post","employee_id", Employee.elgible_for_shift(shift.role_ids), :selected => Employee.elgible_for_shift(shift.role_ids).sample ) %>
     <br />
   <% end %>
 
