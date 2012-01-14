@@ -14,6 +14,15 @@ class Employee < ActiveRecord::Base
   has_many  :employments
   has_many  :roles, :through => :employments
 
+  # Used to populate the drop down for a specific shift on index with employees
+  # that are elgible to work that shift according to their assigned roles
+  def self.elgible_for_shift(role_ids_for_shift)
+    joins(:roles).
+    where("roles.id IN(?)", role_ids_for_shift ).
+    #group_by("employee.id")
+    collect(&:full_name).uniq.sort
+  end
+
   # web-friendly name
   def full_name
     [ self.first_name, self.last_name ].join(" ")

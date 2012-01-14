@@ -18,6 +18,8 @@ class Shift < ActiveRecord::Base
   validates :time_start, :presence => true
   validates :time_end, :presence => true
 
+  # Used to display the role names that are elgible to fill a shift. If empty
+  # then print custom message
   def roles_assigned_to_shift( for_print )
     self.roles.empty? ? for_print : self.roles.map { |role| role.name }.join(", ") 
   end
