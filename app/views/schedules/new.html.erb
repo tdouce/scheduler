@@ -10,13 +10,14 @@
   <%= f.label "Template you want to use:" %>
   <%= f.collection_select :day_id, @day_templates, :id, :name %> <br />
   <br />
-  <% @shifts.each do |shift| %>
-    <%= shift.name %> 
-    <%= select("post","employee_id", Employee.elgible_for_shift(shift.role_ids), :selected => Employee.elgible_for_shift(shift.role_ids).sample ) %>
+
+  <% Employee.elgible_per_shift(@shifts).each do |shift| %>
+    <%= shift[0] %> 
+    <%= select("post","employee_id", shift[2][0] , :selected => shift[2][1] ) %>
     <br />
   <% end %>
 
-  <%= f.submit "Create" %>
+  <%= f.submit "Create Schedule" %>
 
 <% end %>
 
